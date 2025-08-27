@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}Tic Tac Toe{% endblock %}</title>
+  {% load static %}
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+
+  {% block style %}
+  <link rel="stylesheet" type="text/css" href="{% static 'fontawesome/css/all.min.css' %}" />
+  {% endblock %}
+
+  <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+  <script type="text/javascript" src="{% static 'xo_app/js/required_name.js' %}"></script>
+
+  <link rel="icon" href="#" />
+
+</head>
+<body>
+
+<div class="container">
+    <main role="main" style="margin-top: 300px;">
+
+        <div class="card-head">
+          <div class="container">
+            <h2 class="display-4">Let's play in Tic Tac Toe!</h2><br>
+            <form action="/startGame" method="post">
+            {% csrf_token %}
+            <label for="name" style="margin-right: 10px;"><h3>Type your name:</h3></label><input type="text" id="name" name="name" style="margin-right: 20px;" required></input><br>
+            <span class="required_name" style="color: red;">{% if not_valid_username %} The username is already taken - choose different {% endif %}</span><br>
+            <button class="btn btn-primary start_game" role="button" type="submit" style="margin-top: 10px; height: 60px; width: 150px; text-align: center; font-size: 30px;">Play »</button>
+            </form>
+          </div>
+        </div>  
+      </main>
+</div>
+</body>
+</html>
