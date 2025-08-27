@@ -1,10 +1,23 @@
-# TicTacToeLocal
+# TicTacToe
 
 The repository contains the project which I did for my university's classes.
+The app is ready to be used in cloud - ready to deploy using the terrafom and AWS or you can use it locally using docker-compose.
 
-This app allows to play Tic Tac Toe game locally on the same computer.
+## TicTacToeCloud
 
-## How to start app
+In main.tf file there are all information needed to deploy the TicTacToe app to the cloud to play with another person on different computers.
+The terraform file contians commend to build: two instances of EC2 machines, database, security groups with ports, a virtual private cloud, a subnet for the instances, an internet gateway and a routing table.
+
+The private_key.pem file is needed with key to log in via SSH to the machine that Terraform creates.
+
+Now the network traffic is set to accept all ip adresses in and out. To make it more secure before deployment you can set your own range.
+
+
+## TicTacToeLocal
+
+This app allows to play Tic Tac Toe game locally on the same computer using docker.
+
+### How to start app
 It was run on Ubuntu 22.04 and using Python 3.8.
 
 Install Docker.
