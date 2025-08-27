@@ -13,6 +13,17 @@ The private_key.pem file is needed to log in via SSH to the machine that Terrafo
 
 Now the network traffic is set to accept all ip adresses in and out. To make it more secure before deployment you can set your own range.
 
+### How to start app
+It was run on Ubuntu 22.04 and using Python 3.8.
+
+You need an account on AWS cloud.
+
+```
+$ \path\to\this\repo terraform apply
+```
+
+After a successfull deploument the new ip adres will be set to the TicTacToe app you you will be able to start play a game.
+
 
 ## TicTacToeLocal
 
