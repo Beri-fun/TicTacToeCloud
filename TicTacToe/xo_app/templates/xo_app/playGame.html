@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Tic Tac Toe{% endblock %}</title>
+    {% load static %}
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'fontawesome/css/all.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'xo_app/css/table_style.css' %}" />
+    {% endblock %}
+
+
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'xo_app/js/handle_buttons.js' %}"></script>
+
+    <link rel="icon" href="#" />
+</head>
+<body>
+  
+    
+<div class="container">
+    <main role="main" style="margin-top: 100px;">
+        <div class="card-head">
+          <div class="container">
+            <class id="username" data-username="{{user}}"></class>
+            <class id="symbol" data-symbol="{{symbol}}"></class>
+            <h4>You ({{user}}) - <i class="fa-solid  {% if symbol == 'O' %} fa-o o_icon {% else %} fa-x x_icon {% endif %}"></i> </h4>
+            <h4>Opponent - <i class="fa-solid  {% if symbol == 'O' %} fa-x x_icon {% else %} fa-o o_icon {% endif %}" style="margin-top: -20px;"></i></h4><br>
+            <div class="Info_about_who_move">
+            <h3>
+            {% if start and symbol == 'O' %}
+              Waiting for the opponent to join the game
+            {% endif %}
+            {% if start and symbol == 'X' %}
+              Waiting for opponent's move
+            {% endif %}
+            </h3>
+            </div>
+            <table class="table table-bordered borderGame">
+              {% csrf_token %}
+              <tbody>
+                <tr>
+                  <th><a class="btn btn-block btn-default btn-lg eachButton disabled" href="#" role="button" id="11"></a></th>
+                  <th><a class="btn btn-block btn-default btn-lg eachButton disabled" href="#" role="button" id="12"></a></th>
+                  <th><a class="btn btn-block btn-default btn-lg eachButton disabled" href="#" role="button" id="13"></a></th>
+                </tr>
+                <tr>
+                  <th><a class="btn btn-block btn-default btn-lg eachButton disabled" href="#" role="button" id="21"></a></th>
+                  <th><a class="btn btn-block btn-default btn-lg eachButton disabled" href="#" role="button" id="22"></a></th>
+                  <th><a class="btn btn-block btn-default btn-lg eachButton disabled" href="#" role="button" id="23"></a></th>
+                </tr>
+                <tr></tr>
+                  <th><a class="btn btn-block btn-default btn-lg eachButton disabled" href="#" role="button" id="31"></a></th>
+                  <th><a class="btn btn-block btn-default btn-lg eachButton disabled" href="#" role="button" id="32"></a></th>
+                  <th><a class="btn btn-block btn-default btn-lg eachButton disabled" href="#" role="button" id="33"></a></th>
+                </tr>
+              </tbody>
+            </table>
+            <div class="box resultInfo d-none"></div>
+          </div>
+        </div>  
+      </main>
+    </div>
+</div>
+</body>
+</html>

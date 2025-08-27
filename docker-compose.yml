@@ -1,0 +1,9 @@
+services:
+  frontend:
+    build: ./TicTacToe
+    ports:
+      - "8000:8000"
+
+  backend:
+    build: ./TicTacToe_back
+    

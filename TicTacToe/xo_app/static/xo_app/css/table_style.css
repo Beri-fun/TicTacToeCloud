@@ -1,0 +1,22 @@
+.table {
+    border-color: black;
+}
+.table th{
+    border-color: black;
+}
+.table tr th{
+    height: 200px;
+    width: 200px;
+}
+.o_icon {
+    color: blue;
+    margin-top: 20px;
+}
+.x_icon {
+    color: red;
+    margin-top: 20px;
+}
+.eachButton {
+    height: 100%;
+    width: 100%;
+}
