@@ -27,7 +27,7 @@ resource "aws_instance" "frontend_server" {
   }
 
   provisioner "file" {
-    source      = "../TicTacToe1"
+    source      = "../TicTacToe_cloud"
     destination = "/home/ubuntu/"
   }
 
@@ -65,7 +65,7 @@ resource "aws_instance" "backend_server" {
   }
 
   provisioner "file" {
-    source      = "../TicTacToe_back1"
+    source      = "../TicTacToe_cloud_back"
     destination = "/home/ubuntu/"
   }
 
